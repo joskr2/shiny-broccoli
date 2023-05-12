@@ -1,316 +1,192 @@
-'use strict';
+// string -> cadeno de texto
+// number -> numero
+// boolean -> true or false
+// object -> objeto
 
-console.log( "Hola mundo!" )
+// null -> nulo
+// undefined -> indefinido
 
-
-var variable = "Hola mundo!"
-
-var numero = 10;
-
-console.log( numero2 + "" );
-
-var booleano = true;
-let otraVariable = "Hola mundo!"
-
-var numero2
-
-console.log( numero2 )
+// array -> lista(coleccion de elementos)
+// function -> funcion
+// objeto literal -> objeto con propiedades y valores
 
 
-const PI = 3.1416;
+let nombre = "Juan";
 
-const NOMBRE = "Juan";
+let edad = 30;
 
+let sueldo = 1.20;
 
-console.log( NOMBRE )
+let hijos = false;
 
+let objetoPersona = {
+  nombre: "Juan",
+  edad: 30,
+  hijos: false,
+  sueldo: 1.20,
+  direccion: {
+    pais: "Costa Rica",
+    ciudad: "San Jose",
+    edificio: {
+      nombre: "Edificio principal",
+      telefono: "2222-3333"
+    }
+  }
+};
 
-let suma = 4 + 5;
+let ausenciaDeValor = null;
 
-let resta = 4 - 5;
+let valorIndefinido = undefined;
 
-let multiplicacion = 4 * 5;
+let arrayNumeros = [ 1, 2, 3, 4 ];
 
-let division = 4 / 5;
+let miFuncionAnonimaEnFormaDeExpresion = function () {
+  console.log( "saludos desde mi funcion" );
+}
 
-let residuo = 4 % 5;
+function miFuncionEnFormaDeDeclaracion() {
+  console.log( "saludos desde mi funcion" );
+}
 
-
-console.log( suma )
-
-
-
-
-let miEdad = 18;
-
-let edadMinima = "18";
-
-
-
-// == // Igualdad
-
-// === // Igualdad estricta
-
-// que es la igualdad estricta 
-
-console.log( miEdad == edadMinima )
-console.log( miEdad === edadMinima )
-
-
-// != // Diferente
-
-console.log( miEdad != edadMinima )
-
-
-// !== // Diferente estricto
-
-console.log( miEdad !== edadMinima )
-
-
-// > // Mayor que
-
-console.log( miEdad > edadMinima )
-
-console.log( miEdad > 18 )
-console.log( miEdad >= 18 )
-
-// < // Menor que
-
-console.log( miEdad < edadMinima )
-
-console.log( miEdad < 18 )
-console.log( miEdad <= 18 )
-
-
-// && // AND
-
-console.log( true && true )
-
-let a = true;
-let b = false;
-let and = a && b; // false
-let or = a || b;  // true
-let not = !a;
-
-
+const miFuncionEnFormaDeFlecha = () => {
+  console.log( "saludos desde mi funcion" );
+}
 
 // condicionales 
 
+// truty -> true
+// falsy -> false
 
-if ( miEdad >= 18 ) {
-  console.log( "Eres mayor de edad" )
+let valorTruty = "cadena";
+let valorFalsy = undefined;
+
+let comparacionDeValores = "23" > "";
+
+console.log( comparacionDeValores );
+
+
+let dia = 28
+
+let mes = "julio"
+
+if ( dia === 28 && mes === "julio" ) {
+  console.log( "Feliz Aniversario Peru" )
 } else {
-  console.log( "Eres menor de edad" )
+  console.log( "Hoy no es tu aniversario" )
 }
 
+let miAniversario = dia === 28 && mes === "julio" ? "Feliz Aniversario Peru" : "Hoy no es tu aniversario";
 
 
-
-let x = 10;
-let y = 5;
-let z = 15;
-
-
-// if ( x < y && y < z ) {
-//   console.log( 'x es menor que y y y es mayor que z' );
-// } else if ( x === 5 || y === 5 ) {
-//   console.log( 'x o y es igual a 5' );
-// } else {
-//   console.log( 'z es falso' );
-// }
-
-
-let ejemplo = miEdad >= 18 ? "Eres mayor de edad" : "Eres menor de edad";
-
-
-if ( x < y && y < z ) {
-  console.log( 'x es menor que y y y es mayor que z' );
+if ( dia === 28 && mes === "julio" ) {
+  // console.log( "Feliz Aniversario Peru" )
+} else if ( dia === 4 && mes === "julio" ) {
+  // console.log( "Hoy no es tu aniversario USA" )
 } else {
-  console.log( 'x o y es igual a 5' );
+  // console.log( "Hoy no es tu aniversario" )
 }
 
-let resultado = x < y && y < z ? 'x es menor que y y y es mayor que z' : 'x o y es igual a 5';
-
-console.log( resultado )
-
-let dia = 1;
-
-
-if ( dia === 1 ) {
-  console.log( "Lunes" )
-} else if ( dia === 2 ) {
-  console.log( "Martes" )
-} else if ( dia === 3 ) {
-  console.log( "Miercoles" )
-} else if ( dia === 4 ) {
-  console.log( "Jueves" )
-} else if ( dia === 5 ) {
-  console.log( "Viernes" )
-} else if ( dia === 6 ) {
-  console.log( "Sabado" )
-} else if ( dia === 7 ) {
-  console.log( "Domingo" )
-} else {
-  console.log( "No es un dia de la semana" )
-}
-
-// switch
-
-switch ( dia ) {
-  case 1:
-    console.log( "Lunes" )
-    break;
-  case 2:
-    console.log( "Martes" )
-    break;
-  case 3:
-    console.log( "Miercoles" )
-    break;
-  case 4:
-    console.log( "Jueves" )
-    break;
-  case 5:
-    console.log( "Viernes" )
-    break;
-  case 6:
-    console.log( "Sabado" )
-    break;
-  case 7:
-    console.log( "Domingo" )
-    break;
-  default:
-    console.log( "No es un dia de la semana" )
-    break;
-}
-
+let miAniversario2 = dia === 28 && mes === "julio" ? "Feliz Aniversario Peru" : dia === 4 && mes === "julio" ? "Feliz Aniversario USA" : "Hoy no es tu aniversario";
 
 // bucles 
 
-
 // for
 
-// para cantidades conocida ,(con un limite)
+let arrayDeCalificaciones = [ 10, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 100, 10 ];
+let sumaTotal = 0;
 
-for ( let numero = 0; numero <= 10; numero++ ) {
-  console.log( numero )
+for ( let posicion = 0; posicion <= arrayDeCalificaciones.length - 1; posicion++ ) {
+  // console.log( arrayDeCalificaciones[ posicion ] );
 }
 
 
-//while
+// while 
 
-// para cantidades desconocidas ,(sinlimite)
+let numeroRandom = Math.floor( Math.random() * 50 );
+let contador = 0;
 
-let num = 0;
+// while ( numeroRandom !== 10 ) {
+//   contador++;
+//   numeroRandom = Math.floor(Math.random() * 50);
+// }
 
-while ( num <= 10 ) {
-  console.log( num )
-  num++
-}
+// do while
 
+do {
+  numeroRandom = Math.floor( Math.random() * 50 );
+  contador++;
+} while ( numeroRandom !== 10 );
 
-
-let minusculas = convertirAminusculas( "HOLA MUNDO" );
-
-console.log( minusculas )
-
-// hoisting
-
-const convertirAmayusculas2 = function ( texto ) {
-  return texto.toUpperCase();
-}
-
-function convertirAminusculas( texto ) {
-  let textoMinusculas = texto.toLowerCase();
-  return textoMinusculas;
-}
+console.log( `El numero random es ${numeroRandom} y se encontro en ${contador} intentos` );
 
 
-const convertirAmayusculas = texto => texto.toUpperCase();
+// map , filter y reduce 
 
-
-
-// objetos 
-
-let persona = {
-  nombre: "Juan",
-  apellido: "Perez",
-  edad: 18,
-  direccion: {
-    calle: "Av. Siempre viva",
-    numero: 123
-  },
-  telefono: [
-    123456,
-    654321
-  ],
-  saludar: function () {
-    console.log( "Hola" )
-  }
-}
-
-const miJSON = JSON.stringify( persona );
-
-
-const parseToJSON = JSON.parse( miJSON );
-
-console.log( parseToJSON )
-
-console.log( miJSON )
-
-console.log( persona )
-
-
-
-// Arreglos
-
-let arreglo = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
-
-let arreglo2 = [ "Hola", "Mundo", "Como", "Estas" ];
-
-let arreglo3 = [ true, false, true, false, true, false, true, false, true, false ];
-
-let arreglo4 = [ 1, "Hola", true, 4, "Mundo", false, 7, "Como", true, 10 ];
-
-let arreglo5 = [
-  {
-    nombre: "Juan",
-    apellido: "Perez",
-  },
-  {
-    nombre: "Juan",
-    apellido: "Ramirez",
-  },
+let arrayDePersonas = [
   {
     nombre: "Pedro",
-    apellido: "Perez",
+    edad: 30,
+    asistencia: true,
+    colaboracion: 10
   },
   {
-    nombre: "Pablo",
-    apellido: "Perez",
+    nombre: "Martin",
+    edad: 30,
+    asistencia: false,
+    colaboracion: 30
+  },
+  {
+    nombre: "Rosa",
+    edad: 30,
+    asistencia: true,
+    colaboracion: 50
+  },
+  {
+    nombre: "Andrea",
+    edad: 30,
+    asistencia: false,
+    colaboracion: 10000
   }
-]
+];
+
+let filtrarAisistencia = arrayDePersonas.filter( ( persona ) => {
+  // return persona.asistencia === true;
+
+  if ( persona.asistencia === true ) {
+    // console.log( persona, "Si me inivitaron !! " )
+    return persona;
+  }
+} );
+
+let frasesDeBienvenida = filtrarAisistencia.map( ( persona, index ) => {
+  // console.log( persona,index + 1 , "Estoy dentro del array de personas")
+  return `Bienvenida/o  a mi fiesta ${persona.nombre} , para mayores de ${persona.edad} años`
+} )
+
+// let miRecaudacion = filtrarAisistencia.reduce( ( acumulador, persona ) => {
+//   return acumulador + persona.colaboracion;
+// }, 0 );
+
+let miRecaudacion = filtrarAisistencia.reduce( function ( cajaChica, persona ) {
+  return cajaChica + persona.colaboracion;
+}, 0 );
 
 
-let mapeo = arreglo5.map( ( persona, index ) => {
 
-  console.log( persona.nombre, persona.apellido, index )
+console.log( miRecaudacion > 50 ? "La fiesta fue un exito" : "La fiesta fue un fracaso" );
 
-  return persona.nombre;
 
+frasesDeBienvenida.forEach( ( frase, posicion ) => {
+  console.log( posicion + 1, frase )
 } )
 
 
-console.log( mapeo )
-
-let filtrado = arreglo5.filter( persona => persona.nombre === "Juan" );
-
-console.log( filtrado )
+// for(let posicion = 0; posicion < frasesDeBienvenida.length; posicion++){
+//   console.log( posicion+1,frasesDeBienvenida[posicion] )
+// }
 
 
-const numbs = [ 1, 2, 3, 4 ];
-const sum = numbs.reduce( ( result, item ) => result + item, 0 );
-console.log( "La suma es : ",sum ); // 10
 
 
-console.log(typeof(numbs))
+
 
