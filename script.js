@@ -1,55 +1,112 @@
-// Ejercicio de bucles:
-// Escribe un bucle que imprima los números del 1 al 10 en la consola.
 
-// for ( let i = 1; i <= 10; i++ ) {
-//   console.log( i );
-// }
+const header = document.getElementsByTagName( 'header' )[ 0 ];
+const container = document.getElementsByClassName( 'contenedor' )[ 0 ];
+const container2 = document.getElementById( 'subcontenedor' );
+const subcontenedor2 = document.querySelector( '#subcontenedor2' );
+const imagen = document.querySelector( '.imagen' );
 
-//  Ejercicio de condicionales:
-// Escribe una función que tome un número como argumento y devuelva "Es par" si el número es par, y "Es impar" si el número es impar.
+console.log( imagen.getAttribute( 'src' ), "attr imagen" );
 
+imagen.setAttribute( 'src', 'https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png' );
 
-let numero1 = function ( numero ) {
-  if ( numero % 2 === 0 ) {
-    return `El ${numero} es par`
-  } else {
-    return `El ${numero} es impar`
-  }
+console.log( imagen.getAttribute( 'src' ), "attr imagen" );
+
+console.log( "Innerhtml \n", header.innerHTML );
+
+console.log( "OuterHtml \n", header.outerHTML );
+
+subcontenedor2.textContent = "Hola amigos de codiGo!";
+
+console.log( header, container, container2, subcontenedor2 );
+
+console.log( "clases de la etiqueta imagen", imagen.classList.value );
+
+// header.style.backgroundColor = "skyblue";
+// header.style.height = "100px";
+// header.style.width = "100%";
+// header.style.display = "flex";
+// header.style.justifyContent = "center";
+// header.style.alignItems = "center";
+// header.style.flexDirection = "column";
+
+let numero = 1;
+
+if ( numero === 0 ) {
+  console.log( "numero es igual a 0" );
+} else if ( numero === 1 ) {
+  header.style.cssText = "background-color: skyblue; height: 100px; width: 100%; display: flex; justify-content: center; align-items: center; flex-direction: column; font-size: 20px; color: white;font-weight: bold;";
 }
 
-console.log( numero1( 5 ) );
+
+const urlImagen = "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png";
 
 
-// Ejercicio de map:
-// Dado un arreglo de números, utiliza el método map para crear un nuevo arreglo que contenga el cuadrado de cada número(sin usar Math.pow()).
+if ( urlImagen.includes( "google" ) ) {
+  imagen.setAttribute( 'src', urlImagen );
+  imagen.style.width = "200px";
+  imagen.style.height = "200px";
+  imagen.style.borderRadius = "50%";
+  imagen.style.border = "5px solid skyblue";
+  imagen.style.boxShadow = "0px 0px 10px 5px rgba(0,0,0,0.75)";
+}
 
 
-let arregloDeNumeros = [ 10, 25, 30, 41 ]
+imagen.addEventListener( 'click', event => {
+  console.log( event );
+  console.log( "click en la imagen" );
+  imagen.style.display = "none";
+  // alert( "Mi imagen desaperecio!!" );
+} )
 
-let arreglosAlCuadrado = arregloDeNumeros.map( ( elemento ) => { return elemento * elemento } )
-
-// arreglosAlCuadrado.forEach( ( numero ) => {
-//   console.log( numero )
+// imagen.addEventListener( 'mouseover', event => {
+//   console.log( event );
+//   console.log( "mouse sobre la imagen" );
+//   imagen.style.border = "5px solid red";
+//   alert( "Mi imagen tiene un borde rojo!!" );
 // } )
 
-// Ejercicio de filter:
-// Dado un arreglo de números, utiliza el método filter para crear un nuevo arreglo que contenga solo los números pares.
+window.addEventListener( "keypress", event => {
+  console.log( String.fromCharCode( event.keyCode ) );
+} )
 
-let numerosPares = arregloDeNumeros.filter( ( numero ) => {
-  if ( numero % 2 === 0 ) {
-    return numero
+document.addEventListener('keydown', function(event) {
+  if (event.ctrlKey && event.key === 'c') {
+    event.preventDefault();
   }
-} )
+})
 
-numerosPares.forEach( ( numero ) => {
-  console.log( numero )
-} )
+// function insertarDespuesDe(nodoReferencia, nuevoNodo) {
+//   nodoReferencia.parentNode.insertBefore(nuevoNodo, nodoReferencia.nextSibling);
+// }
 
-// Ejercicio de reduce:
-// Dado un arreglo de números, utiliza el método reduce para calcular la suma de todos los elementos del arreglo.
+// insertarDespuesDe(imagen, footer);
 
-let sumaNumeros = arregloDeNumeros.reduce( ( acumualdor, numero ) => {
-  return acumualdor += numero
-},0 )
 
-console.log(sumaNumeros)
+// const footer = document.createElement("footer");
+// footer.textContent = "Hola, soy el footer";
+
+ let body = document.querySelector("body");
+
+// body.insertBefore(container, body.lastChild);
+
+// body.appendChild(container2);
+// body.appendChild(footer);
+
+console.log("padre del elemento header", header.parentNode);
+
+const listDesordenada = document.createElement("ul");
+
+for(let i = 0 ; i < 5 ; i++){
+  let listElement = document.createElement("li");
+  listElement.textContent = `Elemento ${i}`;
+  listDesordenada.appendChild(listElement);
+}
+
+body.insertBefore(listDesordenada, body.lastChild);
+
+listDesordenada.removeChild(listDesordenada.childNodes[2]);
+
+listDesordenada.childNodes.forEach(element => {
+  console.log(element.textContent,"elemento");
+});
+console.log("lista  desordenada", listDesordenada.childNodes);
